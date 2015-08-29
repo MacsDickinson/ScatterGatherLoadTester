@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Load Test - Use with caution</h2>
+
+@using (Html.BeginForm("LoadTest", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <input type="url" placeholder="Domain e.g. http://www.google.com" name="domain" />
+        <input type="text" placeholder="Resource e.g. home/account" name="resource" />
+        <input type="number" placeholder="100" max="1000" name="requests" />
+        <input type="submit" value="Start" />
+    </fieldset>
+}

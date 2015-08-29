@@ -1,0 +1,48 @@
+﻿@model ScatterGatherLoadTest.LoadTestAggregation
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Load Test Results</h2>
+
+<ul>
+    <li>Total Combined: @Model.TotalCombinedMilliseconds ms</li>
+    <li>Average: @Model.AverageMillisecondsPerRequest ms</li>
+    <li>Successful Requests: @Model.SuccessfulRequests</li>
+</ul>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>
+            Start
+        </th>
+        <th>
+            End
+        </th>
+        <th>
+            Millseconds
+        </th>
+        <th>
+            Success
+        </th>
+    </tr>
+    @foreach (var result in Model.Results)
+    {
+        <tr>
+            <td>
+                @result.Start
+            </td>
+            <td>
+                @result.End
+            </td>
+            <td>
+                @result.Milliseconds
+            </td>
+            <td>
+                @result.Success
+            </td>
+        </tr>
+    }
+</table>
+
